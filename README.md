@@ -55,11 +55,9 @@ app.use(
 );
 ```
 
-_If you're using Express 3, make sure these middlewares are listed before `app.router`._
-
 ## How it works
 
-Helmet is a collection of 12 smaller middleware functions that set HTTP response headers. Running `app.use(helmet())` will not include all of these middleware functions by default.
+Helmet is a collection of 11 smaller middleware functions that set HTTP response headers. Running `app.use(helmet())` will not include all of these middleware functions by default.
 
 | Module                                                                                                        | Default? |
 | ------------------------------------------------------------------------------------------------------------- | -------- |
