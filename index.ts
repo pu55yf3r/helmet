@@ -1,5 +1,4 @@
 import { IncomingMessage, ServerResponse } from "http";
-import depd = require("depd");
 
 interface HelmetOptions {
   contentSecurityPolicy?: any;
@@ -13,14 +12,11 @@ interface HelmetOptions {
   permittedCrossDomainPolicies?: any;
   referrerPolicy?: any;
   xssFilter?: any;
-  noCache?: any;
 }
 
 interface MiddlewareFunction {
   (req: IncomingMessage, res: ServerResponse, next: () => void): void;
 }
-
-const deprecate = depd("helmet");
 
 const DEFAULT_MIDDLEWARE = [
   "dnsPrefetchControl",
@@ -43,8 +39,7 @@ type MiddlewareName =
   | "noSniff"
   | "permittedCrossDomainPolicies"
   | "referrerPolicy"
-  | "xssFilter"
-  | "noCache";
+  | "xssFilter";
 
 const middlewares: MiddlewareName[] = [
   "contentSecurityPolicy",
@@ -58,7 +53,6 @@ const middlewares: MiddlewareName[] = [
   "permittedCrossDomainPolicies",
   "referrerPolicy",
   "xssFilter",
-  "noCache",
 ];
 
 function helmet(options: Readonly<HelmetOptions> = {}) {
@@ -129,10 +123,5 @@ helmet.noSniff = require("dont-sniff-mimetype");
 helmet.permittedCrossDomainPolicies = require("helmet-crossdomain");
 helmet.referrerPolicy = require("referrer-policy");
 helmet.xssFilter = require("x-xss-protection");
-
-helmet.noCache = deprecate.function(
-  require("nocache"),
-  "helmet.noCache is deprecated and will be removed in helmet@4. You can use the `nocache` module instead. For more, see https://github.com/helmetjs/helmet/issues/215."
-);
 
 export = helmet;
