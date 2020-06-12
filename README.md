@@ -65,7 +65,6 @@ Helmet is a collection of 11 smaller middleware functions that set HTTP response
 | [crossdomain](https://helmetjs.github.io/docs/crossdomain/) for handling Adobe products' crossdomain requests |          |
 | [dnsPrefetchControl](https://helmetjs.github.io/docs/dns-prefetch-control) controls browser DNS prefetching   | ✓        |
 | [expectCt](https://helmetjs.github.io/docs/expect-ct/) for handling Certificate Transparency                  |          |
-| [featurePolicy](https://helmetjs.github.io/docs/feature-policy/) to limit your site's features                |          |
 | [frameguard](https://helmetjs.github.io/docs/frameguard/) to prevent clickjacking                             | ✓        |
 | [hidePoweredBy](https://helmetjs.github.io/docs/hide-powered-by) to remove the X-Powered-By header            | ✓        |
 | [hsts](https://helmetjs.github.io/docs/hsts/) for HTTP Strict Transport Security                              | ✓        |
